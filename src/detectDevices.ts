@@ -1,6 +1,6 @@
-import usbDetect from 'usb-detection';
+import usbDetect, { Device } from 'usb-detection';
 
-export const detectDevice = () => {
+export const detectDevice = (): void => {
 	try {
 		usbDetect.startMonitoring();
 		console.log(
@@ -8,29 +8,29 @@ export const detectDevice = () => {
 		);
 
 		// Detect add/insert
-		usbDetect.on('add', function (device) {
+		usbDetect.on('add', function (device: Device): void {
 			console.log('\nadd\n', { vendorId: device.vendorId, productId: device.productId });
 		});
-		usbDetect.on('add:vid', function (device) {
+		usbDetect.on('add:vid', function (device: Device): void {
 			console.log('\nadd\n', { vendorId: device.vendorId, productId: device.productId });
 		});
-		usbDetect.on('add:vid:pid', function (device) {
+		usbDetect.on('add:vid:pid', function (device: Device): void {
 			console.log('\nadd\n', { vendorId: device.vendorId, productId: device.productId });
 		});
 
 		// Detect remove
-		usbDetect.on('remove', function (device) {
+		usbDetect.on('remove', function (device: Device): void {
 			console.log('\nremove\n', { vendorId: device.vendorId, productId: device.productId });
 		});
-		usbDetect.on('remove:vid', function (device) {
+		usbDetect.on('remove:vid', function (device: Device): void {
 			console.log('\nremove\n', { vendorId: device.vendorId, productId: device.productId });
 		});
-		usbDetect.on('remove:vid:pid', function (device) {
+		usbDetect.on('remove:vid:pid', function (device: Device): void {
 			console.log('\nremove\n', { vendorId: device.vendorId, productId: device.productId });
 		});
 
 		// Get a list of USB devices on your system
-		usbDetect.find(function (err, devices) {
+		usbDetect.find(function (err: Error | undefined, devices: Device[]): void {
 			if (err) {
 				console.log(err);
 				return;
@@ -46,7 +46,7 @@ export const detectDevice = () => {
 		});
 
 		const twentySeconds = 20000;
-		setTimeout(function () {
+		setTimeout(function (): void {
 			// Allow the process to exit
 			usbDetect.stopMonitoring();
 		}, twentySeconds);
