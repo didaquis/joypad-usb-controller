@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import usbDetect, { Device } from 'usb-detection';
 
 export const detectDevice = (): void => {
