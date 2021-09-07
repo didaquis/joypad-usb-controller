@@ -6,7 +6,7 @@ Node.js 14 or higher. Linux OS.
 
 ### Scripts
 
-#### `npm run start:dev`
+#### `npm run dev`
 
 Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
 
