@@ -1,3 +1,3 @@
-import { detectDevice } from './detectDevices'
+import { detectDevice } from './detectDevices';
 
-detectDevice()
+detectDevice();
