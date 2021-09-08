@@ -10,6 +10,8 @@
     "build": "rimraf ./build && tsc",
     "purgue": "rimraf ./build && rimraf ./coverage && rimraf ./node_modules",
     "dev": "nodemon",
+    "detection-device-mode-step-one": "DETECTION_DEVICE_MODE=yes DETECTION_DEVICE_MODE_STEP=one npm run start",
+    "detection-device-mode-step-two": "DETECTION_DEVICE_MODE=yes DETECTION_DEVICE_MODE_STEP=two npm run start",
     "start": "npm run build && node build/index.js",
     "lint": "eslint . --ext .ts",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",

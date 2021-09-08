@@ -39,7 +39,6 @@ export const detectDevice = (): void => {
 
 			console.log('List of devices connected:');
 			devices.forEach((device) => {
-				console.log('\n');
 				console.log(device);
 			});
 
