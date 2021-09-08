@@ -3,8 +3,8 @@ import {
 	isDetectionDeviceModeStepOne,
 	isDetectionDeviceModeStepTwo,
 } from './infrastructure/environment';
-import { detectDevice } from './deviceDetectionAndMonitoring/detectDevice';
-import { monitorDevice } from './deviceDetectionAndMonitoring/monitorDevice';
+import { detectDevice } from './deviceConfigurator/detectDevice';
+import { monitorDevice } from './deviceConfigurator/monitorDevice';
 
 if (isAppRunningInDetectionDeviceMode()) {
 	if (isDetectionDeviceModeStepOne()) {
