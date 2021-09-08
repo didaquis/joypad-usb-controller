@@ -11,18 +11,23 @@ El proyecto ha sido desarrollado usando un mando de consola USB (Lakeview Resear
 * Dispositivo USB con botones o pulsadores
 
 ## Configurar el proyecto
-El proceso de configuración consta de tres pasos. En el primer paso vamos a detectar e identificar tu dispositivo USB. En el segundo paso manitorizaremos el dispositivo para identificar las comunicaciones a través del puerto USB. Asegúrate de cumplir los requisitos técnicos para arrancar el proyecto e instalar las dependencias.
+El proceso de configuración consta de varios pasos. Asegúrate de cumplir los requisitos técnicos para arrancar el proyecto e instalar las dependencias. 
 
-### Instrucciones para detectar los dispositivos USB conectados
+En el primer paso vamos a detectar e identificar tu dispositivo USB. 
+En el segundo paso manitorizaremos el dispositivo para identificar las comunicaciones a través del puerto USB.
+
+### Primer paso: Detectar los dispositivos USB conectados
 Ejecuta el comando `npm run configure-device-step-one`. La aplicación tardará unos instantes en transpilarse y luego se iniciará. Al iniciarsr, comenzará un proceso que dura 20 segundos (deja que el proceso termine, no lo interrumpas). Durante esos segundos suceden dos cosas: 
 * La aplicación listará información sobre los dispositivos USB actualmente conectados
 * La aplicación estará escuchando todos aquellos dispositivos USB que se conecten o desconecten al equipo. Si algún dispositivo se conecta o desconecta, la aplicación te indicará el valor del "vendorId" y del "productId". 
 Vas a necesitar esos valores para monitorizar el dispositivo USB.
 
-### Instrucciones para monitorizar las comunicaciones de un dispositivo USB conectado
+### Segundo paso: Monitorizar las comunicaciones de un dispositivo USB conectado
 Para realizar este paso necesitas los valores de "vendorId" y "productId" del dispositivo que quiera monitorizar. Si no tienes esos valores, debes realizar el paso anterior. 
-Ahora localiza el fichero "monitorDevice.ts" y busca una constante llamada "TARGET_DEVICE". Modifica sus valores con la información del "vendorId" y "productId" del dispositivo que quieras monitorizar.  
+Ahora localiza el fichero "monitorDevice.ts" y busca una constante llamada "TARGET_DEVICE". Modifica sus valores con la información del "vendorId" y "productId" del dispositivo que quieras monitorizar. 
+Asegúrate de que tu dispositivo USB está conectado. 
 Ahora vamos a ejecutar el comando `npm run configure-device-step-two`. La aplicación tardará unos instantes en transpilarse y luego se iniciará.
+
 
 
 ## Información para desarrollo

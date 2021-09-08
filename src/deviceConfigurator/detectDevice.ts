@@ -5,7 +5,7 @@ export const detectDevice = (): void => {
 	try {
 		usbDetect.startMonitoring();
 		console.log(
-			'\nListening for 20 seconds. Please, wait... meanwhile you can try to plug or unplug your USB device\n\n',
+			'\nRunning for 20 seconds. Please, wait... meanwhile you can try to plug or unplug your USB device\n',
 		);
 
 		// Detect add/insert
@@ -42,7 +42,7 @@ export const detectDevice = (): void => {
 				console.log(device);
 			});
 
-			console.log('\nPlease, wait... \n\n');
+			console.log('\nPlease, wait... \n');
 		});
 
 		const twentySeconds = 20000;
