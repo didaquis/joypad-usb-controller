@@ -1,11 +1,11 @@
-export const isAppRunningInDetectionDeviceMode = (): boolean => {
-	return process.env.DETECTION_DEVICE_MODE === 'yes';
+export const isAppRunningInDeviceConfigurationMode = (): boolean => {
+	return process.env.DEVICE_CONFIGURATION_MODE === 'yes';
 };
 
 export const isDetectionDeviceModeStepOne = (): boolean => {
-	return process.env.DETECTION_DEVICE_MODE_STEP === 'one';
+	return process.env.DEVICE_CONFIGURATION_MODE_STEP === 'one';
 };
 
 export const isDetectionDeviceModeStepTwo = (): boolean => {
-	return process.env.DETECTION_DEVICE_MODE_STEP === 'two';
+	return process.env.DEVICE_CONFIGURATION_MODE_STEP === 'two';
 };
