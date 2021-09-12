@@ -140,7 +140,7 @@ export const monitorDevice = (): void => {
 		setTimeout(function (): void {
 			console.log('\nlistOfSignalsDetected :\n', listOfSignalsDetected);
 
-			const wait = (timeout = 1000) => {
+			const wait = (timeout = 2000) => {
 				return new Promise((resolve) => setTimeout(resolve, timeout));
 			};
 
@@ -150,7 +150,7 @@ export const monitorDevice = (): void => {
 				try {
 					task();
 				} catch (error) {
-					console.log(error);
+					//console.log(error);
 				}
 				await wait();
 			});
@@ -162,7 +162,7 @@ export const monitorDevice = (): void => {
 			// 	console.log('Release interface');
 			// });
 			// device.close();
-			
+
 			// debo detener el proceso de escucha (cerrando los puertos)
 			// debo asegurarme de detener la aplicación por completo
 		}, twentySeconds);
