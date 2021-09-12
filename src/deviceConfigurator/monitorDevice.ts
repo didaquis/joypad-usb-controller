@@ -20,10 +20,11 @@ export const monitorDevice = (): void => {
 		`Start to monitor the device with vendor id ${TARGET_DEVICE.vendorId} and product id ${TARGET_DEVICE.productId}`,
 	);
 
+	const listOfSignalsDetected: string[] = [];
+
 	const device = usb.findByIds(TARGET_DEVICE.vendorId, TARGET_DEVICE.productId);
 
 	if (device !== undefined) {
-		// ... hay dispositivo conectado
 		try {
 			device.close();
 		} catch (error) {
@@ -103,8 +104,36 @@ export const monitorDevice = (): void => {
 		]
 		*/
 
-		const inEndpoint = firstInterface.endpoint(129);
-		console.log(inEndpoint);
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		const inEndpoint: any = firstInterface.endpoint(129); /* an "IN endpoint" means "device to PC" */
+
+		if (inEndpoint.direction === 'in') {
+			inEndpoint.startPoll();
+		}
+
+		inEndpoint.on('data', (data: Buffer) => {
+			const signal = data.toString('base64');
+
+			if (!listOfSignalsDetected.includes(signal)) {
+				listOfSignalsDetected.push(signal);
+				console.log(`signal detected: ${signal}`);
+			}
+		});
+		inEndpoint.on('error', (error: unknown) => {
+			/*
+			// https://vovkos.github.io/doxyrest/samples/libusb-sphinxdoc/enum_libusb_transfer_status.html#doxid-group-libusb-asyncio-1gga9fcb2aa23d342060ebda1d0cf7478856ab1b9cbcb1de27a8fbeceb3427fb2fb14
+			enum libusb_transfer_status {
+				LIBUSB_TRANSFER_COMPLETED = 'Transfer completed without error. Note that this does not indicate that the entire amount of requested data was transferred.',
+				LIBUSB_TRANSFER_ERROR = 'Transfer failed.',
+				LIBUSB_TRANSFER_TIMED_OUT = 'Transfer timed out.',
+				LIBUSB_TRANSFER_CANCELLED = 'Transfer was cancelled.',
+				LIBUSB_TRANSFER_STALL = 'For bulk/interrupt endpoints: halt condition detected (endpoint stalled). For control endpoints: control request not supported.',
+				LIBUSB_TRANSFER_NO_DEVICE = 'Device was disconnected.',
+				LIBUSB_TRANSFER_OVERFLOW = 'Device sent more data than requested.',
+			}
+			*/
+			console.log('error event!', error);
+		});
 	}
 
 	console.log('\nRunning for 20 seconds. Please press all buttons on your device one at a time\n');
