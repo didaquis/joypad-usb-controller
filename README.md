@@ -29,6 +29,12 @@ Asegúrate de que tu dispositivo USB está conectado.
 Ahora vamos a ejecutar el comando `npm run configure-device-step-two`. La aplicación tardará unos instantes en transpilarse y luego se iniciará.
 
 
+### Solución a errores comunes: 
+
+> LIBUSB_ERROR_ACCESS
+
+Prueba a usar `sudo` antes del comando que estés utilizando.
+
 
 ## Información para desarrollo
 
