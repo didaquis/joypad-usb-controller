@@ -142,6 +142,7 @@ export const monitorDevice = (): void => {
 
 			firstInterface.release(true, () => {
 				device.close();
+				process.exit();
 			});
 
 			// const wait = (timeout = 2000) => {
