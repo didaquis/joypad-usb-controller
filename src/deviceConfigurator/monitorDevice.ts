@@ -20,7 +20,6 @@ export const monitorDevice = (): void => {
 		`Start to monitor the device with vendor id ${TARGET_DEVICE.vendorId} and product id ${TARGET_DEVICE.productId}`,
 	);
 
-
 	const device = usb.findByIds(TARGET_DEVICE.vendorId, TARGET_DEVICE.productId);
 
 	if (device !== undefined) {
@@ -33,9 +32,9 @@ export const monitorDevice = (): void => {
 
 		console.log('');
 	}
-	
+
 	console.log('\nRunning for 20 seconds. Please press all buttons on your device one at a time\n');
-	
+
 	// escuchar al dispositivo
 	// por cada señal distinta que reciba, la almaceno en un array
 	// cuando pasen los 20 segundos, le muestro al usuario todos las señales distintas que he captado
