@@ -109,8 +109,8 @@ export const monitorDevice = (): void => {
 
 		if (inEndpoint.direction === 'in') {
 			inEndpoint.startPoll();
-			inEndpoint.on('data', (data: Buffer) => {
-				const signal = data.toString('base64');
+			inEndpoint.on('data', (buffer: Buffer) => {
+				const signal = buffer.toString('base64');
 
 				if (!listOfSignalsDetected.includes(signal)) {
 					listOfSignalsDetected.push(signal);
