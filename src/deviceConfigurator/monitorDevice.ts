@@ -24,13 +24,87 @@ export const monitorDevice = (): void => {
 
 	if (device !== undefined) {
 		// ... hay dispositivo conectado
+		try {
+			device.close();
+		} catch (error) {
+			console.log('\nError trying to close the device\n', error);
+			// Can't close device with a pending request    ===>   ¿¿¿???
+		}
 		device.open();
-		//if (isDeviceOpen) {
-		const interfaces = device.interfaces;
-		console.log('interfaces: ', interfaces);
-		//}
+		//const allInterfaces = device.interfaces;
+		//console.log(allInterfaces);
+		/**
+		[
+			Interface {
+				device: Device {
+				busNumber: 1,
+				deviceAddress: 4,
+				deviceDescriptor: [Object],
+				portNumbers: [Array],
+				interfaces: [Circular *1],
+				_configDescriptor: [Object]
+				},
+				id: 0,
+				altSetting: 0,
+				descriptor: {
+				bLength: 9,
+				bDescriptorType: 4,
+				bInterfaceNumber: 0,
+				bAlternateSetting: 0,
+				bNumEndpoints: 1,
+				bInterfaceClass: 3,
+				bInterfaceSubClass: 0,
+				bInterfaceProtocol: 0,
+				iInterface: 0,
+				extra: <Buffer 09 21 00 01 00 01 22 bc 00>,
+				endpoints: [Array]
+				},
+				interfaceNumber: 0,
+				endpoints: [ [InEndpoint] ]
+			}
+		]
+		 */
 
-		console.log('');
+		const firstInterface = device.interface(0);
+		//console.log('firstInterface', firstInterface);
+
+		if (firstInterface && firstInterface.isKernelDriverActive()) {
+			firstInterface.detachKernelDriver();
+		}
+		firstInterface.claim();
+
+		//const allEndpoints = firstInterface.endpoints;
+		//console.log(allEndpoints);
+		/*
+		[
+			InEndpoint {
+				device: Device {
+				busNumber: 1,
+				deviceAddress: 4,
+				deviceDescriptor: [Object],
+				portNumbers: [Array],
+				interfaces: [Array],
+				_configDescriptor: [Object]
+				},
+				descriptor: {
+				bLength: 7,
+				bDescriptorType: 5,
+				bEndpointAddress: 129,
+				bmAttributes: 3,
+				wMaxPacketSize: 7,
+				bInterval: 10,
+				bRefresh: 0,
+				bSynchAddress: 0,
+				extra: <Buffer >
+				},
+				address: 129,
+				transferType: 3
+			}
+		]
+		*/
+
+		const inEndpoint = firstInterface.endpoint(129);
+		console.log(inEndpoint);
 	}
 
 	console.log('\nRunning for 20 seconds. Please press all buttons on your device one at a time\n');
