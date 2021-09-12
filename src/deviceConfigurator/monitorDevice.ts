@@ -28,7 +28,7 @@ export const monitorDevice = (): void => {
 		try {
 			device.close();
 		} catch (error) {
-			console.log('\nError trying to close the device\n', error);
+			//console.log('\nError trying to close the device\n', error);
 			// Can't close device with a pending request    ===>   ¿¿¿???
 		}
 		device.open();
@@ -140,23 +140,26 @@ export const monitorDevice = (): void => {
 		setTimeout(function (): void {
 			console.log('\nlistOfSignalsDetected :\n', listOfSignalsDetected);
 
-			const wait = (timeout = 2000) => {
-				return new Promise((resolve) => setTimeout(resolve, timeout));
-			};
-
-			const tasksForNicelyShutdown = [inEndpoint.stopPoll, firstInterface.release, device.close];
-
-			tasksForNicelyShutdown.forEach(async (task) => {
-				try {
-					task();
-				} catch (error) {
-					//console.log(error);
-				}
-				await wait();
+			firstInterface.release(true, () => {
+				device.close();
 			});
 
+			// const wait = (timeout = 2000) => {
+			// 	return new Promise((resolve) => setTimeout(resolve, timeout));
+			// };
+
+			// const tasksForNicelyShutdown = [inEndpoint.stopPoll, firstInterface.release, device.close];
+
+			// tasksForNicelyShutdown.forEach(async (task) => {
+			// 	try {
+			// 		task();
+			// 	} catch (error) {
+			// 		//console.log(error);
+			// 	}
+			// 	await wait();
+			// });
+
 			/*
-			
 			inEndpoint.on('end', () => {
 				// este callback debería ejecutarse cuando se cierra el polling. 
 				// por tanto, quizás deba ser aquí donde haga el ".release()" de la interface
