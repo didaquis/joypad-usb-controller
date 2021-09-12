@@ -115,6 +115,7 @@ export const monitorDevice = (): void => {
 				if (!listOfSignalsDetected.includes(signal)) {
 					listOfSignalsDetected.push(signal);
 					console.log(`signal detected: ${signal}`);
+					//console.log(`signal hex: ${buffer.toString('hex')}`);
 				}
 			});
 			inEndpoint.on('error', (error: unknown) => {
@@ -133,18 +134,39 @@ export const monitorDevice = (): void => {
 				console.log('error event!', error);
 			});
 		}
+		console.log('\nRunning for 20 seconds. Please press all buttons on your device one at a time\n');
+
+		const twentySeconds = 20000;
+		setTimeout(function (): void {
+			console.log('\nlistOfSignalsDetected :\n', listOfSignalsDetected);
+
+			const wait = (timeout = 1000) => {
+				return new Promise((resolve) => setTimeout(resolve, timeout));
+			};
+
+			const tasksForNicelyShutdown = [inEndpoint.stopPoll, firstInterface.release, device.close];
+
+			tasksForNicelyShutdown.forEach(async (task) => {
+				try {
+					task();
+				} catch (error) {
+					console.log(error);
+				}
+				await wait();
+			});
+
+			// inEndpoint.stopPoll(() => {
+			// 	console.log('Stop poll');
+			// });
+			// firstInterface.release(() => {
+			// 	console.log('Release interface');
+			// });
+			// device.close();
+			
+			// debo detener el proceso de escucha (cerrando los puertos)
+			// debo asegurarme de detener la aplicación por completo
+		}, twentySeconds);
+	} else {
+		console.log('Device not detected!');
 	}
-
-	console.log('\nRunning for 20 seconds. Please press all buttons on your device one at a time\n');
-
-	// escuchar al dispositivo
-	// por cada señal distinta que reciba, la almaceno en un array
-	// cuando pasen los 20 segundos, le muestro al usuario todos las señales distintas que he captado
-
-	const twentySeconds = 20000;
-	setTimeout(function (): void {
-		console.log('\nlistOfSignalsDetected :\n', listOfSignalsDetected);
-		// debo detener el proceso de escucha (cerrando los puertos)
-		// debo asegurarme de detener la aplicación por completo
-	}, twentySeconds);
 };
