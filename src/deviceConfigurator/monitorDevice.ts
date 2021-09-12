@@ -155,6 +155,14 @@ export const monitorDevice = (): void => {
 				await wait();
 			});
 
+			/*
+			
+			inEndpoint.on('end', () => {
+				// este callback debería ejecutarse cuando se cierra el polling. 
+				// por tanto, quizás deba ser aquí donde haga el ".release()" de la interface
+			});
+			*/
+
 			// inEndpoint.stopPoll(() => {
 			// 	console.log('Stop poll');
 			// });
