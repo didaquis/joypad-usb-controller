@@ -28,12 +28,11 @@ Para realizar este paso necesitas los valores de "vendorId" y "productId" del di
 Ahora localiza el fichero "monitorDevice.ts" y busca una constante llamada "TARGET_DEVICE". Modifica sus valores con la información del "vendorId" y "productId" del dispositivo que quieras monitorizar. 
 Asegúrate de que tu dispositivo USB está conectado. 
 Ahora vamos a ejecutar el comando `npm run configure-device-step-two`. La aplicación tardará unos instantes en transpilarse y luego se iniciará. Al iniciarse, comenzará un proceso que dura 20 segundos (deja que el proceso termine, no lo interrumpas). Durante esos segundos debes pulsar aquellos botones que quieras identificar. La manera correcta de hacerlo es pulsando los botones de uno en uno. Te recomiendo que recuerdes en que orden pulsas los botones.  
-Cuando los 20 segundos hayan pasado, la aplicación te mostrará la lista de todas las señales únicas detectadas. Se muestran en el orden en el que fueron detectadas.
+Cuando los 20 segundos hayan pasado, la aplicación te mostrará la lista de todas las señales únicas detectadas. Se muestran en el orden en el que fueron detectadas. Así que te será sencillo identificar que señal corresponde a que botón pulsado. Eso sí, debes tener en cuenta las señales pasivas. Fíjate que el listado de señales incluye dos señales más que número de botones pulsados. Esto es porque la aplicación está detectando estas dos señales:
+1. Comunicación establecida entre el dispositivo USB y el PC.
+2. Polling del dispositivo USB.  
 
-
- Ten en cuenta las señales pasivas. 
-
-### Tercer paso: Detectar los dispositivos USB conectados
+### Tercer paso: Configurar un fichero con los datos de tu dispositivo
 
 
 ### Solución a errores comunes: 
