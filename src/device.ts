@@ -1,23 +1,3 @@
-/**
-signal detected: AQDwf39/fw==
-signal detected: AgDwf39/fw==
-
-signal detected: AQjwf39/fw==
-signal detected: AQHwf39/fw==
-signal detected: AQLwf39/fw==
-signal detected: AQTwf39/fw==
-signal detected: ASDwf39/fw==
-signal detected: AYDwf39/fw==
-signal detected: ARDwf39/fw==
-signal detected: AUDwf39/fw==
-signal detected: AQDwfwB/fw==
-signal detected: AQDw/39/fw==
-signal detected: AQDwf/9/fw==
-signal detected: AQDwAH9/fw==
-signal detected: AQDyf39/fw==
-signal detected: AQDxf39/fw==
- */
-
 export interface MyDevice {
 	vendorId: number;
 	productId: number;
@@ -45,59 +25,59 @@ export const MyDevice: MyDevice = {
 		},
 		{
 			description: 'Square button',
-			signal: '',
+			signal: 'AQjwf39/fw==',
 		},
 		{
 			description: 'Triangle button',
-			signal: '',
+			signal: 'AQHwf39/fw==',
 		},
 		{
 			description: 'Circle button',
-			signal: '',
+			signal: 'AQLwf39/fw==',
 		},
 		{
 			description: 'Crux button',
-			signal: '',
+			signal: 'AQTwf39/fw==',
 		},
 		{
 			description: 'R1 button',
-			signal: '',
+			signal: 'ASDwf39/fw==',
 		},
 		{
 			description: 'R2 button',
-			signal: '',
+			signal: 'AYDwf39/fw==',
 		},
 		{
 			description: 'L1 button',
-			signal: '',
+			signal: 'ARDwf39/fw==',
 		},
 		{
 			description: 'L2 button',
-			signal: '',
+			signal: 'AUDwf39/fw==',
 		},
 		{
 			description: 'Up button',
-			signal: '',
+			signal: 'AQDwfwB/fw==',
 		},
 		{
 			description: 'Right button',
-			signal: '',
+			signal: 'AQDw/39/fw==',
 		},
 		{
 			description: 'Down button',
-			signal: '',
+			signal: 'AQDwf/9/fw==',
 		},
 		{
 			description: 'Left button',
-			signal: '',
+			signal: 'AQDwAH9/fw==',
 		},
 		{
 			description: 'Select button',
-			signal: '',
+			signal: 'AQDyf39/fw==',
 		},
 		{
 			description: 'Start button',
-			signal: '',
+			signal: 'AQDxf39/fw==',
 		},
 	],
 };
