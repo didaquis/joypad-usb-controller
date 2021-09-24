@@ -34,10 +34,10 @@ Cuando los 20 segundos hayan pasado, la aplicación te mostrará la lista de tod
 
 ### Tercer paso: Configurar un fichero con los datos de tu dispositivo
 Localiza el fichero "joypad.ts". Configura tu dispositivo USB. Fíjate en las propiedades que tienen cada una de las señales que quieras configurar: 
-* `signal` => señal detectada. Coloca uno de los valores detectados en el paso dos del configurador
-* `description` => escribe un texto que te ayude a identificar a que señal corresponde
-* `requireManualAction` => 
-* `isTheStandbySignal` => 
+* `signal` => señal detectada. Coloca uno de los valores detectados en el paso dos del configurador.
+* `description` => escribe un texto que te ayude a identificar a que señal corresponde.
+* `requireManualAction` => indica si esta señal se emite cuando un usuario pulsa un botón. Establece el valor a `false` si son las señales pasivas.
+* `isTheStandbySignal` => indica si es la señal del polling del dispositivo USB. Establece el valor a `true` si es la señal que emite el dispositivo de manera constante sin la intervención del usuario.
 
 
 
