@@ -39,8 +39,64 @@ export const MyDevice: MyDevice = {
 			signal: 'AQDwf39/fw==',
 		},
 		{
-			description: 'Standby signal',
+			description: 'Standby status',
 			signal: 'AgDwf39/fw==',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
+		},
+		{
+			description: '',
+			signal: '',
 		},
 	],
 };
