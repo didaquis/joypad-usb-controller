@@ -49,9 +49,11 @@ export const detectDevice = (): void => {
 		setTimeout(function (): void {
 			// Allow the process to exit
 			usbDetect.stopMonitoring();
+			process.exit();
 		}, twentySeconds);
 	} catch (error) {
 		// Allow the process to exit
 		usbDetect.stopMonitoring();
+		process.exit();
 	}
 };

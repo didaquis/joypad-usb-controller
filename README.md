@@ -37,8 +37,9 @@ Localiza el fichero "joypad.ts". Configura tu dispositivo USB. Fíjate en las pr
 * `signal` => señal detectada. Coloca uno de los valores detectados en el paso dos del configurador.
 * `description` => escribe un texto que te ayude a identificar a que señal corresponde.
 * `requireManualAction` => indica si esta señal se emite cuando un usuario pulsa un botón. Establece el valor a `false` si son las señales pasivas.
-* `isTheStandbySignal` => indica si es la señal del polling del dispositivo USB. Establece el valor a `true` si es la señal que emite el dispositivo de manera constante sin la intervención del usuario.
+* `isTheStandbySignal` => indica si es la señal del polling del dispositivo USB. Establece el valor a `true` si es la señal que emite el dispositivo de manera constante sin la intervención del usuario.  
 
+La aplicación ya tiene todo lo que necesita para funcionar. Arranca la aplicación y observa como se detectan aquellos botones pulsados.  
 
 
 ### Solución a errores comunes: 

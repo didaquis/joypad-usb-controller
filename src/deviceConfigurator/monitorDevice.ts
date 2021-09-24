@@ -96,5 +96,6 @@ export const monitorDevice = (): void => {
 		}, twentySeconds);
 	} else {
 		console.log('Device not detected!');
+		process.exit();
 	}
 };
