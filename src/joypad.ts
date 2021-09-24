@@ -1,21 +1,9 @@
-export interface MyDevice {
-	vendorId: number;
-	productId: number;
-	description: string;
-	listOfSignals: SignalsOfDevice[];
-}
-
-interface SignalsOfDevice {
-	description: string;
-	signal: string;
-	requireManualAction: boolean;
-	isTheStandbySignal: boolean;
-}
+import { USB_Device } from './types';
 
 /**
  * Cuando el botón ANALOG esta ON, el rotor de la izquierda puede llegar a transmitir la misma señal que "arriba", "derecha", "abajo", e "izquierda" con la luz OFF.
  */
-export const MyDevice: MyDevice = {
+export const joypad: USB_Device = {
 	vendorId: 2341,
 	productId: 34918,
 	description: 'Lakeview Research WiseGroup Ltd, MP-8866 Dual Joypad',

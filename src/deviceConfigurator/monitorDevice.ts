@@ -1,11 +1,6 @@
 /* eslint-disable no-console */
-
 import usb from 'usb';
-
-type TargetDevice = {
-	vendorId: number;
-	productId: number;
-};
+import { TargetDevice } from '../types';
 
 /*
  * Set here the values of the device to monitor
@@ -26,10 +21,12 @@ export const monitorDevice = (): void => {
 
 	if (device !== undefined) {
 		try {
+			// Close the communication with the device.
+			// This situation may occur if the last run ended without closing the device properly.
 			device.close();
-		} catch (error) {
-			//console.log('\nError trying to close the device\n', error);
-			// Can't close device with a pending request    ===>   ¿¿¿???
+		} catch {
+			// An error may occur if we try to close the communication with a device and the communication is not opened.
+			// We don't need to handle this error.
 		}
 		device.open();
 		//const allInterfaces = device.interfaces;

@@ -33,6 +33,8 @@ Cuando los 20 segundos hayan pasado, la aplicación te mostrará la lista de tod
 2. Polling del dispositivo USB.  
 
 ### Tercer paso: Configurar un fichero con los datos de tu dispositivo
+Localiza el fichero "joypad.ts". 
+
 
 
 ### Solución a errores comunes: 
