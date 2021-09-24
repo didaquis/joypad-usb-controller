@@ -49,7 +49,7 @@ Prueba a usar `sudo` antes del comando que estés utilizando.
 
 > LIBUSB_ERROR_BUSY
 
-La última vez que se ejcutó el programa no finalizó correctamente, y ahora el acceso al puerto está bloqueado
+La última vez que se ejecutó el programa no finalizó correctamente, y ahora el acceso al puerto está bloqueado
 
 
 ## Información para desarrollo
