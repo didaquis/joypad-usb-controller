@@ -10,6 +10,9 @@ interface SignalsOfDevice {
 	signal: string;
 }
 
+/**
+ * Cuando el botón ANALOG esta ON, el rotor de la izquierda puede llegar a transmitir la misma señal que "arriba", "derecha", "abajo", e "izquierda" con la luz OFF.
+ */
 export const MyDevice: MyDevice = {
 	vendorId: 2341,
 	productId: 34918,
