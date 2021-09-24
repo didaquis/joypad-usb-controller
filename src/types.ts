@@ -1,7 +1,7 @@
 export type TargetDevice = {
 	vendorId: number;
 	productId: number;
-}
+};
 
 export interface USB_Device {
 	vendorId: number;
@@ -11,8 +11,8 @@ export interface USB_Device {
 }
 
 interface SignalsOfDevice {
-	description: string;
 	signal: string;
+	description: string;
 	requireManualAction: boolean;
 	isTheStandbySignal: boolean;
 }
