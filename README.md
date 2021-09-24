@@ -14,7 +14,8 @@ El proyecto ha sido desarrollado usando un mando de consola USB (Lakeview Resear
 El proceso de configuración consta de varios pasos. Asegúrate de cumplir los requisitos técnicos para arrancar el proyecto e instalar las dependencias. 
 
 En el primer paso vamos a detectar e identificar tu dispositivo USB. 
-En el segundo paso manitorizaremos el dispositivo para identificar las comunicaciones a través del puerto USB.
+En el segundo paso monitorizaremos el dispositivo para identificar las comunicaciones a través del puerto USB.
+En el tercer paso modificaremos el fichero de configuración de nuestro dispositivo.
 
 ### Primer paso: Detectar los dispositivos USB conectados
 Ejecuta el comando `npm run configure-device-step-one`. La aplicación tardará unos instantes en transpilarse y luego se iniciará. Al iniciarsr, comenzará un proceso que dura 20 segundos (deja que el proceso termine, no lo interrumpas). Durante esos segundos suceden dos cosas: 
@@ -27,6 +28,8 @@ Para realizar este paso necesitas los valores de "vendorId" y "productId" del di
 Ahora localiza el fichero "monitorDevice.ts" y busca una constante llamada "TARGET_DEVICE". Modifica sus valores con la información del "vendorId" y "productId" del dispositivo que quieras monitorizar. 
 Asegúrate de que tu dispositivo USB está conectado. 
 Ahora vamos a ejecutar el comando `npm run configure-device-step-two`. La aplicación tardará unos instantes en transpilarse y luego se iniciará.
+
+### Tercer paso: Detectar los dispositivos USB conectados
 
 
 ### Solución a errores comunes: 
