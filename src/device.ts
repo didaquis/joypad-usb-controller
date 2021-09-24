@@ -8,7 +8,7 @@ export interface MyDevice {
 interface SignalsOfDevice {
 	description: string;
 	signal: string;
-	requiresManualAction: boolean;
+	requireManualAction: boolean;
 	isTheStandbySignal: boolean;
 }
 
@@ -23,97 +23,97 @@ export const MyDevice: MyDevice = {
 		{
 			description: 'Established communication',
 			signal: 'AQDwf39/fw==',
-			requiresManualAction: false,
+			requireManualAction: false,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Standby status',
 			signal: 'AgDwf39/fw==',
-			requiresManualAction: false,
+			requireManualAction: false,
 			isTheStandbySignal: true,
 		},
 		{
 			description: 'Square button',
 			signal: 'AQjwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Triangle button',
 			signal: 'AQHwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Circle button',
 			signal: 'AQLwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Crux button',
 			signal: 'AQTwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'R1 button',
 			signal: 'ASDwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'R2 button',
 			signal: 'AYDwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'L1 button',
 			signal: 'ARDwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'L2 button',
 			signal: 'AUDwf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Up button',
 			signal: 'AQDwfwB/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Right button',
 			signal: 'AQDw/39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Down button',
 			signal: 'AQDwf/9/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Left button',
 			signal: 'AQDwAH9/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Select button',
 			signal: 'AQDyf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 		{
 			description: 'Start button',
 			signal: 'AQDxf39/fw==',
-			requiresManualAction: true,
+			requireManualAction: true,
 			isTheStandbySignal: false,
 		},
 	],
