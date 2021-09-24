@@ -96,39 +96,6 @@ export const monitorDevice = (): void => {
 				device.close();
 				process.exit();
 			});
-
-			// const wait = (timeout = 2000) => {
-			// 	return new Promise((resolve) => setTimeout(resolve, timeout));
-			// };
-
-			// const tasksForNicelyShutdown = [inEndpoint.stopPoll, firstInterface.release, device.close];
-
-			// tasksForNicelyShutdown.forEach(async (task) => {
-			// 	try {
-			// 		task();
-			// 	} catch (error) {
-			// 		//console.log(error);
-			// 	}
-			// 	await wait();
-			// });
-
-			/*
-			inEndpoint.on('end', () => {
-				// este callback debería ejecutarse cuando se cierra el polling. 
-				// por tanto, quizás deba ser aquí donde haga el ".release()" de la interface
-			});
-			*/
-
-			// inEndpoint.stopPoll(() => {
-			// 	console.log('Stop poll');
-			// });
-			// firstInterface.release(() => {
-			// 	console.log('Release interface');
-			// });
-			// device.close();
-
-			// debo detener el proceso de escucha (cerrando los puertos)
-			// debo asegurarme de detener la aplicación por completo
 		}, twentySeconds);
 	} else {
 		console.log('Device not detected!');
