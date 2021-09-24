@@ -1,6 +1,7 @@
 /**
 signal detected: AQDwf39/fw==
 signal detected: AgDwf39/fw==
+
 signal detected: AQjwf39/fw==
 signal detected: AQHwf39/fw==
 signal detected: AQLwf39/fw==
@@ -43,59 +44,59 @@ export const MyDevice: MyDevice = {
 			signal: 'AgDwf39/fw==',
 		},
 		{
-			description: '',
+			description: 'Square button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Triangle button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Circle button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Crux button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'R1 button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'R2 button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'L1 button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'L2 button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Up button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Right button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Down button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Left button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Select button',
 			signal: '',
 		},
 		{
-			description: '',
+			description: 'Start button',
 			signal: '',
 		},
 	],

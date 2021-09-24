@@ -2,11 +2,11 @@
 
 Este proyecto permite detectar dispositivos conectados por USB, así como reconocer patrones en el polling de comunicación con el ordenador. 
 
-El proyecto ha sido desarrollado usando un mando de consola USB (Lakeview Research WiseGroup Ltd, MP-8866 Dual Joypad) y una Raspberry PI.
+El proyecto ha sido desarrollado usando un mando de consola USB (Lakeview Research WiseGroup Ltd, MP-8866 Dual Joypad) y una Raspberry PI (sistema operativo: Raspberry Pi OS) .
 
 ## Requisitos para ejecutar el proyecto
 * Node.js 14 o superior
-* Linux OS (Ubuntu, Raspberry Pi OS, Debian)
+* Linux OS (Ubuntu, Raspberry Pi OS, Debian, ...)
 * Puerto USB
 * Dispositivo USB con botones o pulsadores
 
